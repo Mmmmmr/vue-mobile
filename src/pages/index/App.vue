@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     
-    <router-view/>
+    <router-view name="Foot"/>
   </div>
 </template>
 
 <script>
-import { Toast } from 'mint-ui';
-Toast('提示信息');
+
+
 export default {
     
 }
