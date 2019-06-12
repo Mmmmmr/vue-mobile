@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <a href="/compose.html">compose</a>
+    
     <router-view/>
   </div>
 </template>
 
 <script>
+import { Toast } from 'mint-ui';
+Toast('提示信息');
 export default {
     
 }
