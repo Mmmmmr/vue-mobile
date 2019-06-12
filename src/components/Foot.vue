@@ -4,7 +4,7 @@
       <li>
         <a href="#">
           <icon name="home" class="icon"></icon>
-          <div>有赞</div>
+          <div>商城</div>
         </a>
       </li>
       <li>
