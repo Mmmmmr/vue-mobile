@@ -1,28 +1,10 @@
 <template>
   <div class="bottom-nav">
     <ul>
-      <li>
-        <a href="#">
-          <icon name="home" class="icon"></icon>
-          <div>商城</div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <icon name="category" class="icon"></icon>
-          <div>分类</div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <icon name="cart" class="icon"></icon>
-          <div>购物车</div>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <icon name="user" class="icon"></icon>
-          <div>我</div>
+      <li v-for="(list, index) in navConfig" :key="index" @click="toggleActive(index)">
+        <a :href="list.href">
+          <icon :name="list.icon" class="icon" :class="{active: index===current}"></icon>
+          <div :class="{active: index===current}">{{list.name}}</div>
         </a>
       </li>
     </ul>
@@ -32,6 +14,23 @@
 <script>
 import Icon from "./Icon";
 export default {
+  name: "Foot",
+  data() {
+    return {
+      navConfig: [
+        { name: "商城", icon: "home", href: "#" },
+        { name: "分类", icon: "category", href: "#" },
+        { name: "购物车", icon: "cart", href: "#" },
+        { name: "我", icon: "user", href: "#" }
+      ],
+      current: 0
+    };
+  },
+  methods: {
+    toggleActive(index) {
+      this.current = index;
+    }
+  },
   components: {
     Icon
   }
@@ -75,5 +74,8 @@ export default {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: 100% auto;
+}
+.bottom-nav ul li a .active {
+  color: red;
 }
 </style>
