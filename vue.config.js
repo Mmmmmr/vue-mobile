@@ -5,10 +5,10 @@ module.exports = {
       template: "src/pages/index/index.html",
       filename: "index.html"
     },
-    compose: {
-      entry: "src/pages/compose/main.js",
-      template: "src/pages/compose/compose.html",
-      filename: "compose.html"
+    category: {
+      entry: "src/pages/category/main.js",
+      template: "src/pages/category/category.html",
+      filename: "category.html"
     }
   }
 };

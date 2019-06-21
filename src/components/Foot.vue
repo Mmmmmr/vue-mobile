@@ -13,26 +13,30 @@
 
 <script>
 import Icon from "./Icon";
+import { parse } from "path";
 export default {
   name: "Foot",
   data() {
     return {
       navConfig: [
-        { name: "商城", icon: "home", href: "#" },
-        { name: "分类", icon: "category", href: "#" },
+        { name: "商城", icon: "home", href: "index.html" },
+        { name: "分类", icon: "category", href: "category.html" },
         { name: "购物车", icon: "cart", href: "#" },
         { name: "我", icon: "user", href: "#" }
       ],
-      current: 0
+      current: parseInt(localStorage.getItem("current")) || 0
     };
   },
   methods: {
     toggleActive(index) {
-      this.current = index;
+      localStorage.setItem("current", index);
     }
   },
   components: {
     Icon
+  },
+  mounted() {
+    localStorage.setItem("current", 0);
   }
 };
 </script>
@@ -42,6 +46,7 @@ export default {
 .bottom-nav {
   position: fixed;
   left: 0;
+  z-index: 9999;
   bottom: 0;
   width: 100%;
   height: 50px;

@@ -1,17 +1,14 @@
 <template>
   <div id="app">
-    <a href="/compose.html">compose</a>
-    <router-view/>
+    <router-view name="Foot"/>
+    <router-view name="TopList"></router-view>
   </div>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 
 <style lang="scss">
-
 </style>
