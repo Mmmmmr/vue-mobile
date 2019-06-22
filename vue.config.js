@@ -9,6 +9,11 @@ module.exports = {
       entry: "src/pages/category/main.js",
       template: "src/pages/category/category.html",
       filename: "category.html"
+    },
+    search: {
+      entry: "src/pages/search/main.js",
+      template: "src/pages/search/search.html",
+      filename: "search.html"
     }
   }
 };

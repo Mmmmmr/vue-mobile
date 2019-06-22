@@ -37,6 +37,9 @@ export default {
   },
   mounted() {
     localStorage.setItem("current", 0);
+  },
+  destroyed() {
+    localStorage.setItem("current", 0);
   }
 };
 </script>

@@ -75,6 +75,7 @@
               v-for="(list, index) in subData.brandList"
               :key="index"
               class="category-item js-category-item"
+              @click="toSearch(list)"
             >
               <div class="img-wrapper">
                 <img :src="list.img" class="category-img">
@@ -90,6 +91,7 @@
               v-for="(list, index) in subData.categoryList"
               :key="index"
               class="category-item js-category-item"
+              @click="toSearch(list)"
             >
               <div class="img-wrapper">
                 <img :src="list.img" class="category-img">
@@ -117,6 +119,9 @@ export default {
     };
   },
   methods: {
+    toSearch(list) {
+      location.href = `search.html?keyword=${list.name}&id=${list.id}`;
+    },
     getTopList() {
       axios
         .get("http://rap2api.taobao.org/app/mock/7058/category/topList")
@@ -384,6 +389,7 @@ export default {
   height: 70%;
   margin-top: 44px;
   margin-bottom: 48px;
+  margin-left: 30%;
 }
 
 .wrapper {
@@ -393,6 +399,7 @@ export default {
   flex-direction: row;
 }
 .container {
+  position: fixed;
   height: 100%;
   width: 30%;
   margin-top: 44px;
