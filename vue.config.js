@@ -14,6 +14,11 @@ module.exports = {
       entry: "src/pages/search/main.js",
       template: "src/pages/search/search.html",
       filename: "search.html"
+    },
+    goods: {
+      entry: "src/pages/goods/main.js",
+      template: "src/pages/goods/goods.html",
+      filename: "goods.html"
     }
   }
 };

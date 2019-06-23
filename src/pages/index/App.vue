@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-cloak>
     <router-view name="Swipe"></router-view>
     <router-view name="HotGoods"/>
     <router-view name="Foot"/>
